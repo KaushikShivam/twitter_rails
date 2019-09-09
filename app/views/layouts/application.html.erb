@@ -40,7 +40,14 @@
 						<p class="control">
 							<%= link_to 'New Tweet', new_tweet_path, class: "button is-info is-inverted" %>
 						</p>
-            <p class="control">Sign up</p>
+            <% if user_signed_in? %>
+              <p class="control">
+                <%= link_to current_user.name, edit_user_registration_path, class: "button is-info" %>
+              </p>
+            <% end %>
+            <p class="control">
+              <%= link_to 'Sign Up'. '#', class: "button is-info" %>
+            </p>
           </div>
         </div>
       </div>
